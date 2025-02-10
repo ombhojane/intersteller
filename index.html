@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sci-Fi Facts</title>
+  <style>
+    body {
+      background-color: #000; /* Dark background */
+      color: #eee;            /* Light text color */
+      font-family: 'Roboto Mono', monospace; /* Code-like font */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0; 
+    }
+
+    .container {
+      background-color: #111827; /* Dark blue-ish container */
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+
+    h1 {
+      color: #6366f1; /* Light blue heading */
+      margin-bottom: 20px;
+    }
+
+    #fact {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+
+    button {
+      background-color: #3b82f6; /* Blue button */
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Sci-Fi Facts</h1>
+    <div id="fact"></div> 
+    <button onclick="loadNextFact()">Load Fact</button>
+  </div>
+
+  <script>
+    const facts = [
+      "Early Beginnings: The first science fiction film is widely considered to be Georges Méliès' *A Trip to the Moon* (1902), a silent French film about a group of astronomers who travel to the moon.",
+      "Metropolis (1927): Fritz Lang's *Metropolis* was a pioneering work of science fiction cinema, known for its special effects and dystopian themes, influencing many subsequent films.",
+      "Golden Age: The 1950s is often considered the \"Golden Age\" of science fiction film, with classics like *The Day the Earth Stood Still* (1951), *The War of the Worlds* (1953), and *Invasion of the Body Snatchers* (1956) reflecting Cold War anxieties.",
+      "Blockbusters: *Star Wars* (1977) changed the landscape of science fiction cinema, ushering in the era of big-budget special effects-driven blockbusters.",
+      "Genre Hybridity: Science fiction often blends with other genres, such as horror (e.g., *Alien* (1979)), action (e.g., *The Matrix* (1999)), and comedy (e.g., *Ghostbusters* (1984)).",
+      "Social Commentary: Sci-fi films often explore social and political issues, using futuristic settings as allegories for contemporary concerns.",
+      "Technological Influence: Science fiction films have inspired real-world technological advancements, with concepts often influencing the design and development of new gadgets and devices.",
+      "Diverse Subgenres: Science fiction encompasses a wide range of subgenres, including cyberpunk (e.g., *Blade Runner* (1982)), space opera (e.g., *Star Wars*), and post-apocalyptic fiction (e.g., *Mad Max* (1979)).",
+      "Cultural Impact: Sci-fi movies have had a profound impact on popular culture, influencing everything from fashion and music to art and literature.",
+      "Enduring Popularity: Science fiction remains a popular genre today, with recent films like *Arrival* (2016), *Dune* (2021), and *Everything Everywhere All at Once* (2022) continuing to captivate audiences worldwide."
+    ];
+
+    let currentFactIndex = 0;
+
+    function loadNextFact() {
+      document.getElementById('fact').innerText = facts[currentFactIndex];
+      currentFactIndex = (currentFactIndex + 1) % facts.length; 
+    }
+
+    // Display the first fact on page load
+    loadNextFact(); 
+  </script>
+</body>
+</html>
